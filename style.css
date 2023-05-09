@@ -9,29 +9,29 @@ body {
   font-family: sans-serif;
 }
 
-h2, .h2 {
+h2 {
   font-size: 40px;
 }
 
-h3, .h3 {
+h3 {
   font-size: 20px;
 }
 
-h4, .h4 {
+h4 {
   font-size: 15px;
   font-weight: 300;
 }
 
-h5, .h5 {
+h5 {
   font-weight: 400;
 }
 
-span, label {
+.g-span, .g-label {
   font-size: 12px;
   font-weight: 400;
 }
 
-input {
+.g-input {
   padding: 10px;
   border: 1px solid #d9d9d9;
   border-radius: 5px;
@@ -39,7 +39,7 @@ input {
   font-size: 15px;
 }
 
-select {
+.g-select {
   padding: 10px;
   border: 1px solid #d9d9d9;
   border-radius: 5px;

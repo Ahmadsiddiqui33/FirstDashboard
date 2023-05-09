@@ -76,7 +76,7 @@
             <a class="profile-img" onclick="show_user()"><img src="https://images.unsplash.com/photo-1661956600655-e772b2b97db4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80" class="profile-img" alt="user-profile"></a>
             <!----NAVBAR MODAL---->
             <div class="profile-modal" id="profle_modal">
-                <label for="logged_as">Logged as</label>
+                <label class="g-span" for="logged_as">Logged as</label>
                 <h5><b>John Doe</b></h5>
                 <h5>cecil_sebastian@gmail.com</h5>
                 <hr style="margin-top: 15px;">
@@ -93,8 +93,8 @@
                 <div class="filters-wrapper flex-item">
                     <!------FILTER------>
                 <div class="filter">
-                    <label>State:</label>
-                    <select name="state" id="state">
+                    <label class="g-label">State:</label>
+                    <select class="g-select" name="state" id="state">
                         <option value="select" disabled selected>Select</option>
                         <option value="option1">Started</option>
                         <option value="option1">InProgress</option>
@@ -104,8 +104,8 @@
                 </div>
                 <!------FILTER------>
                 <div class="filter">
-                    <label>Type:</label>
-                    <select name="state" id="state">
+                    <label class="g-label">Type:</label>
+                    <select class="g-select" name="state" id="state">
                         <option value="select" disabled selected>Select</option>
                         <option value="option1">Option 1</option>
                         <option value="option1">Option 1</option>
@@ -115,8 +115,8 @@
                 </div>
                 <!------FILTER------>
                 <div class="filter">
-                    <label>Store:</label>
-                    <select name="state" id="state">
+                    <label class="g-label">Store:</label>
+                    <select class="g-select" name="state" id="state">
                         <option value="select" disabled selected>Select</option>
                         <option value="option1">Seller Centeral</option>
                         <option value="option1">Vendor Centeral</option>
@@ -128,7 +128,7 @@
                 <!------SEARCH------>
                 <div class="table-search flex-item">
                     <i class="fa-solid fa-magnifying-glass"></i>
-                    <input type="text" placeholder="Search by Name">
+                    <input class="g-input" type="text" placeholder="Search by Name">
                 </div>
             </div>
 
@@ -284,18 +284,18 @@
 
            <div class="table-footer">
             <div class="records-count">
-                <span>1-20 of 13688 Records</span>
+                <span class="g-span">1-20 of 13688 Records</span>
             </div>
             <div class="pagination">
                 <a href="#"><i class="fa-solid fa-angle-left"></i></a>
-                <a href="#"><span>1</span></a>
-                <a href="#"><span>2</span></a>
-                <a href="#"><span>3</span></a>
-                <a href="#"><span>4</span></a>
-                <a href="#"><span>5</span></a>
-                <a href="#"><span>...</span></a>
-                <a href="#"><span>12</span></a>
-                <a href="#"><span>13</span></a>
+                <a href="#"><span class="g-span">1</span></a>
+                <a href="#"><span class="g-span">2</span></a>
+                <a href="#"><span class="g-span">3</span></a>
+                <a href="#"><span class="g-span">4</span></a>
+                <a href="#"><span class="g-span">5</span></a>
+                <a href="#"><span class="g-span">...</span></a>
+                <a href="#"><span class="g-span">12</span></a>
+                <a href="#"><span class="g-span">13</span></a>
                 <a href="#"><i class="fa-solid fa-angle-right"></i></a>
               </div>
         </div>
