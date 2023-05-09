@@ -43,7 +43,7 @@ span, label{
 }
 input{
     @include input-border();
-    height: 17px;
+    height: 18px;
     font-size: $h4;
 }
 select{
@@ -66,6 +66,13 @@ select{
 .btn-1{
     border: transparent;
 }
+.container{
+    padding: 0 16px;
+}
+
+
+
+
 header{
     position: relative;
     background-color: $light;
@@ -144,6 +151,10 @@ header{
         }
     }
 }
+
+
+
+
 .app-header{
     display: flex;
     align-items: center;
@@ -153,141 +164,55 @@ header{
         color: $text-color;
     }
     .table-filter{
-        width: 50%;
+        width: 60%;
         margin-left: auto;
         display: flex;
-        .filter{
-            max-width: 300px;
-            margin-right: 20px;
+        .filters-wrapper{
             display: flex;
-            width: inherit;
-            position: relative;
-            align-items: center;
-
-            select{
+            width: 100%;
+            .filter{
+                max-width: 300px;
+                margin-right: 20px;
+                display: flex;
+                width: inherit;
                 position: relative;
-                flex: 1;
-                option:first-child{
-                    display: none !important;
+                align-items: center;
+    
+                select{
+                    position: relative;
+                    flex: 1;
+                    option:first-child{
+                        display: none !important;
+                    }
                 }
-            }
-            label{
-                color: $darker;
-                padding-right: 10px;
-            }
-        }
-        .table-search{
-            border-radius: 5px;
-            position: relative;
-            display: flex;
-            align-items: center;
-            i{
-                position: absolute;
-                right: 10px;
-                color: $blue;
-            }
-            input{
-            padding-right: 30px;
-            }
-        }
-    }
-}
-.container{
-    padding: 0 16px;
-}
-.table{
-    border-radius: 5px;
-    width: 100%;
-    max-height: 100%;
-    overflow: auto;
-    .table-header{
-        border-bottom: 1px solid $darker;
-        display: flex;
-        background-color: $light;
-    }
-    .table-heading{
-        flex: 1;
-        padding: 10px;
-        span{
-            color: $darker;
-            font-weight: 300;
-        }
-    }
-    .table-row{
-        display: flex;
-        border-bottom: 1px solid $border;
-        &:hover{
-            background-color: $light;
-        }
-        .table-cell{
-            flex: 1;
-            display: flex;
-            align-self: center;
-            padding: 0 10px;
-        }
-        .table-controls{
-            justify-content: end;
-            button{
-                margin-left: 10px;
-                border: none;
-                font-size: $h4;
-                background-color: transparent;
-                cursor: pointer;
-                &.reload{
-                    color: $blue;
-                }
-                &.delete{
-                    color:red;
+                label{
+                    color: $darker;
+                    padding-right: 10px;
                 }
             }
         }
-        .state span{
-            font-size: $h5;
-            border: 1px solid;
-            border-radius: 50px;
-            padding: 5px 7px;
-            width: 75px;
-            text-align: center;
-        }
-        .inprogress span{
-            border-color: #979797;
-            color: #979797;
-            background-color: #97979727;
-        }
-        .started span{
-            border-color: $blue;
-            color: $blue;
-            background-color: #3c76ff11;
-        }
-        .failed span{
-            border-color: red;
-            color: red;
-            background-color: rgba(255, 0, 0, 0.057);
-        }
-        .complete span{
-            color: $green;
-            border-color: $green;
-            background-color: #0fb60012;
-        }
+        
     }
-    .table-footer{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: $light;
-        padding: 10px 16px;
-        color: $darker;
-        margin-top: 20px;
+    .table-search{
         border-radius: 5px;
-        .pagination{
-            a{
-                text-decoration: none;
-                padding: 8px;
-                color: $darker;
-            }
+        position: relative;
+        min-width: 200px;
+        max-width: 300px;
+        display: flex;
+        align-items: center;
+        i{
+            position: absolute;
+            right: 10px;
+            color: $blue;
+        }
+        input{
+        padding-right: 30px;
+        width: 100%;
         }
     }
 }
+
+
 
 .table-modal{
     position: absolute;
@@ -313,27 +238,128 @@ header{
         }
     }
 }
+/*---TABLE CSS--*/
 
+.responsive-table{
+    overflow-x: auto !important;
+    border-radius: 10px;
+    overflow: hidden;
+    table{
+        border-spacing: 0;
+        width: 100%;
+        thead{
+            background-color: $light;
+            th{
+                padding: 0.85rem 0.85rem;
+                text-align: left;
+                min-width: 150px;
+                font-size: $h5;
+                color: $darker;
+                font-weight: 300;
+                border-bottom: 1px solid $darker;
+            }
+        }
+        tbody{
+            td{
+                padding: 1.2rem 0.85rem;
+                text-align: left;
+                min-width: 150px;
+                font-weight: 300;
+                font-size: $h4;
+                border-bottom: 1px solid $border;
+                &:last-child{
+                    text-align: right;
+                    button{
+                        margin-left: 10px;
+                        border: none;
+                        font-size: $h4;
+                        background-color: transparent;
+                        cursor: pointer;
+                        &.reload{
+                            color: $blue;
+                        }
+                        &.delete{
+                            color:red;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .badge{
+        font-size: $h5;
+        border: 1px solid;
+        border-radius: 50px;
+        padding: 5px 10px;
+        width: 75px;
+        text-align: center;
+    }
 
-@media (max-width: 1700px){
-    .app-header{
-        .table-filter{
-            width: 60%;
+    .inprogress{
+        border-color: #979797;
+        color: #979797;
+        background-color: #97979727;
+    }
+    .started{
+        border-color: $blue;
+        color: $blue;
+        background-color: #3c76ff11;
+    }
+    .failed{
+        border-color: red;
+        color: red;
+        background-color: rgba(255, 0, 0, 0.057);
+    }
+    .complete{
+        color: $green;
+        border-color: $green;
+        background-color: #0fb60012;
+    }
+}
+.table-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $light;
+    padding: 10px 16px;
+    color: $darker;
+    margin-top: 10px;
+    border-radius: 5px;
+    .pagination{
+        a{
+            text-decoration: none;
+            padding: 8px;
+            color: $darker;
         }
     }
 }
-@media (max-width: 1400px){
-    .app-header{
-        .table-filter{
-            width: 70%;
-        }
-    }
-}
-@media (max-width: 1300px){
+
+
+@media (max-width: 1200px) {
     .app-header{
         display: block;
         .table-filter{
             width: 100%;
+        }
+    }
+}
+@media (max-width: 768px) {
+    .app-header{
+        .table-filter{
+            width: 100%;
+            display: block;
+            .filters-wrapper{
+                .filter{
+                    &:last-child{
+                        margin-right: 0;
+                    }
+                }
+            }
+            .table-search{
+                width: 100%;
+                max-width: 100%;
+                margin-top: 10px;
+            }
         }
     }
 }

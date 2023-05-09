@@ -34,7 +34,7 @@ input {
   padding: 10px;
   border: 1px solid #d9d9d9;
   border-radius: 5px;
-  height: 17px;
+  height: 18px;
   font-size: 15px;
 }
 
@@ -63,6 +63,10 @@ select {
 
 .btn-1 {
   border: transparent;
+}
+
+.container {
+  padding: 0 16px;
 }
 
 header {
@@ -151,11 +155,15 @@ header {
   color: #002050;
 }
 .app-header .table-filter {
-  width: 50%;
+  width: 60%;
   margin-left: auto;
   display: flex;
 }
-.app-header .table-filter .filter {
+.app-header .table-filter .filters-wrapper {
+  display: flex;
+  width: 100%;
+}
+.app-header .table-filter .filters-wrapper .filter {
   max-width: 300px;
   margin-right: 20px;
   display: flex;
@@ -163,126 +171,33 @@ header {
   position: relative;
   align-items: center;
 }
-.app-header .table-filter .filter select {
+.app-header .table-filter .filters-wrapper .filter select {
   position: relative;
   flex: 1;
 }
-.app-header .table-filter .filter select option:first-child {
+.app-header .table-filter .filters-wrapper .filter select option:first-child {
   display: none !important;
 }
-.app-header .table-filter .filter label {
+.app-header .table-filter .filters-wrapper .filter label {
   color: #979797;
   padding-right: 10px;
 }
-.app-header .table-filter .table-search {
+.app-header .table-search {
   border-radius: 5px;
   position: relative;
+  min-width: 200px;
+  max-width: 300px;
   display: flex;
   align-items: center;
 }
-.app-header .table-filter .table-search i {
+.app-header .table-search i {
   position: absolute;
   right: 10px;
   color: #3c76ff;
 }
-.app-header .table-filter .table-search input {
+.app-header .table-search input {
   padding-right: 30px;
-}
-
-.container {
-  padding: 0 16px;
-}
-
-.table {
-  border-radius: 5px;
   width: 100%;
-  max-height: 100%;
-  overflow: auto;
-}
-.table .table-header {
-  border-bottom: 1px solid #979797;
-  display: flex;
-  background-color: #f8f8f8;
-}
-.table .table-heading {
-  flex: 1;
-  padding: 10px;
-}
-.table .table-heading span {
-  color: #979797;
-  font-weight: 300;
-}
-.table .table-row {
-  display: flex;
-  border-bottom: 1px solid #d9d9d9;
-}
-.table .table-row:hover {
-  background-color: #f8f8f8;
-}
-.table .table-row .table-cell {
-  flex: 1;
-  display: flex;
-  align-self: center;
-  padding: 0 10px;
-}
-.table .table-row .table-controls {
-  justify-content: end;
-}
-.table .table-row .table-controls button {
-  margin-left: 10px;
-  border: none;
-  font-size: 15px;
-  background-color: transparent;
-  cursor: pointer;
-}
-.table .table-row .table-controls button.reload {
-  color: #3c76ff;
-}
-.table .table-row .table-controls button.delete {
-  color: red;
-}
-.table .table-row .state span {
-  font-size: 12px;
-  border: 1px solid;
-  border-radius: 50px;
-  padding: 5px 7px;
-  width: 75px;
-  text-align: center;
-}
-.table .table-row .inprogress span {
-  border-color: #979797;
-  color: #979797;
-  background-color: rgba(151, 151, 151, 0.1529411765);
-}
-.table .table-row .started span {
-  border-color: #3c76ff;
-  color: #3c76ff;
-  background-color: rgba(60, 118, 255, 0.0666666667);
-}
-.table .table-row .failed span {
-  border-color: red;
-  color: red;
-  background-color: rgba(255, 0, 0, 0.057);
-}
-.table .table-row .complete span {
-  color: #0fb600;
-  border-color: #0fb600;
-  background-color: rgba(15, 182, 0, 0.0705882353);
-}
-.table .table-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #f8f8f8;
-  padding: 10px 16px;
-  color: #979797;
-  margin-top: 20px;
-  border-radius: 5px;
-}
-.table .table-footer .pagination a {
-  text-decoration: none;
-  padding: 8px;
-  color: #979797;
 }
 
 .table-modal {
@@ -310,21 +225,116 @@ header {
   color: #f49301;
 }
 
-@media (max-width: 1700px) {
-  .app-header .table-filter {
-    width: 60%;
-  }
+/*---TABLE CSS--*/
+.responsive-table {
+  overflow-x: auto !important;
+  border-radius: 10px;
+  overflow: hidden;
 }
-@media (max-width: 1400px) {
-  .app-header .table-filter {
-    width: 70%;
-  }
+.responsive-table table {
+  border-spacing: 0;
+  width: 100%;
 }
-@media (max-width: 1300px) {
+.responsive-table table thead {
+  background-color: #f8f8f8;
+}
+.responsive-table table thead th {
+  padding: 0.85rem 0.85rem;
+  text-align: left;
+  min-width: 150px;
+  font-size: 12px;
+  color: #979797;
+  font-weight: 300;
+  border-bottom: 1px solid #979797;
+}
+.responsive-table table tbody td {
+  padding: 1.2rem 0.85rem;
+  text-align: left;
+  min-width: 150px;
+  font-weight: 300;
+  font-size: 15px;
+  border-bottom: 1px solid #d9d9d9;
+}
+.responsive-table table tbody td:last-child {
+  text-align: right;
+}
+.responsive-table table tbody td:last-child button {
+  margin-left: 10px;
+  border: none;
+  font-size: 15px;
+  background-color: transparent;
+  cursor: pointer;
+}
+.responsive-table table tbody td:last-child button.reload {
+  color: #3c76ff;
+}
+.responsive-table table tbody td:last-child button.delete {
+  color: red;
+}
+.responsive-table .badge {
+  font-size: 12px;
+  border: 1px solid;
+  border-radius: 50px;
+  padding: 5px 10px;
+  width: 75px;
+  text-align: center;
+}
+.responsive-table .inprogress {
+  border-color: #979797;
+  color: #979797;
+  background-color: rgba(151, 151, 151, 0.1529411765);
+}
+.responsive-table .started {
+  border-color: #3c76ff;
+  color: #3c76ff;
+  background-color: rgba(60, 118, 255, 0.0666666667);
+}
+.responsive-table .failed {
+  border-color: red;
+  color: red;
+  background-color: rgba(255, 0, 0, 0.057);
+}
+.responsive-table .complete {
+  color: #0fb600;
+  border-color: #0fb600;
+  background-color: rgba(15, 182, 0, 0.0705882353);
+}
+
+.table-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8f8f8;
+  padding: 10px 16px;
+  color: #979797;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+.table-footer .pagination a {
+  text-decoration: none;
+  padding: 8px;
+  color: #979797;
+}
+
+@media (max-width: 1200px) {
   .app-header {
     display: block;
   }
   .app-header .table-filter {
     width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .app-header .table-filter {
+    width: 100%;
+    display: block;
+  }
+  .app-header .table-filter .filters-wrapper .filter:last-child {
+    margin-right: 0;
+  }
+  .app-header .table-filter .table-search {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 10px;
   }
 }/*# sourceMappingURL=style.css.map */
