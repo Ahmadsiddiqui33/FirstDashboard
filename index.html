@@ -1,307 +1,315 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Document</title>
-</head>
-<body>
-    <!------------------->
+    <link href="assets/dist/css/style.min.css" rel="stylesheet">
+
+    <title>Hello, world! <i class="fa fa-chart"></i></title>
+  </head>
+  <body>
+  
+<!------------------->
     <!------HEADER------>
     <!------------------->
     <header>
-        <button class="responsive-nav-btn btn" onclick="openNav()"><i class="fa-solid fa-bars"></i></button>
-        <!----LOGO---->
-        <div class="navbar-logo">
-            <img src="#" class="logo" alt="logo">
-        </div>
-        <!----NAVBAR NAVIAGTIONS---->
-        <nav class="navbar-nav">
-            <ul>
-                <li class="active">
-                    <a href="#"><i class="fa-regular fa-user"></i>Users</a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa-solid fa-briefcase"></i>Jobs</a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa-solid fa-box"></i>Products</a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa-solid fa-cart-shopping"></i>Orders</a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa-solid fa-dollar-sign"></i>Purchasing</a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa-solid fa-truck"></i>Suppliers</a>
-                </li>
+      <button class="responsive-nav-btn btn" onclick="openNav()"><i class="fa-solid fa-bars"></i></button>
+      <!----LOGO---->
+      <div class="navbar-logo">
+          <img src="#" class="logo" alt="logo">
+      </div>
+      <!----NAVBAR NAVIAGTIONS---->
+      <nav class="navbar-nav">
+          <ul>
+              <li class="active">
+                  <a href="#"><i class="fa-regular fa-user"></i>Users</a>
+              </li>
+              <li>
+                  <a href="#"><i class="fa-solid fa-briefcase"></i>Jobs</a>
+              </li>
+              <li>
+                  <a href="#"><i class="fa-solid fa-box"></i>Products</a>
+              </li>
+              <li>
+                  <a href="#"><i class="fa-solid fa-cart-shopping"></i>Orders</a>
+              </li>
+              <li>
+                  <a href="#"><i class="fa-solid fa-dollar-sign"></i>Purchasing</a>
+              </li>
+              <li>
+                  <a href="#"><i class="fa-solid fa-truck"></i>Suppliers</a>
+              </li>
 
-            </ul>
-        </nav>
-        <!----SIDE NAV---->
-        <div id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <ul>
-                <li class="active">
-                    <a href="#"><i class="fa-regular fa-user"></i>Users</a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa-solid fa-briefcase"></i>Jobs</a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa-solid fa-box"></i>Products</a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa-solid fa-cart-shopping"></i>Orders</a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa-solid fa-dollar-sign"></i>Purchasing</a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa-solid fa-truck"></i>Suppliers</a>
-                </li>
+          </ul>
+      </nav>
+      <!----SIDE NAV---->
+      <div id="mySidenav" class="sidenav">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <ul>
+              <li class="active">
+                  <a href="#"><i class="fa-regular fa-user"></i>Users</a>
+              </li>
+              <li>
+                  <a href="#"><i class="fa-solid fa-briefcase"></i>Jobs</a>
+              </li>
+              <li>
+                  <a href="#"><i class="fa-solid fa-box"></i>Products</a>
+              </li>
+              <li>
+                  <a href="#"><i class="fa-solid fa-cart-shopping"></i>Orders</a>
+              </li>
+              <li>
+                  <a href="#"><i class="fa-solid fa-dollar-sign"></i>Purchasing</a>
+              </li>
+              <li>
+                  <a href="#"><i class="fa-solid fa-truck"></i>Suppliers</a>
+              </li>
 
-            </ul>
-        </div>
-        <!----NAVBAR USER---->
-        <div class="navbar-user">
-            <a><i class="fa-regular fa-circle-question"></i></a>
+          </ul>
+      </div>
+      <!----NAVBAR USER---->
+      <div class="navbar-user">
+          <a><i class="fa-regular fa-circle-question"></i></a>
 
-            <a><i class="fa-regular fa-bell"></i></a>
+          <a><i class="fa-regular fa-bell"></i></a>
 
-            <a class="profile-img" onclick="show_user()"><img src="https://images.unsplash.com/photo-1661956600655-e772b2b97db4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80" class="profile-img" alt="user-profile"></a>
-            <!----NAVBAR MODAL---->
-            <div class="profile-modal" id="profle_modal">
-                <label class="g-span" for="logged_as">Logged as</label>
-                <h5><b>John Doe</b></h5>
-                <h5>cecil_sebastian@gmail.com</h5>
-                <hr style="margin-top: 15px;">
-                <button class="btn btn-1"><i class="fa-solid fa-arrow-right-from-bracket"></i>Logout</button>
-    </header>
-    <!---------------------->
-    <!------APP HEADER------>
-    <!---------------------->
-    <div class="container">
-        <div class="app-header">
-            <h1>Job Management</h1>
-            <!------FILTERS------>
-            <div class="table-filter">
-                <div class="filters-wrapper flex-item">
-                    <!------FILTER------>
-                <div class="filter">
-                    <label class="g-label">State:</label>
-                    <select class="g-select" name="state" id="state">
-                        <option value="select" disabled selected>Select</option>
-                        <option value="option1">Started</option>
-                        <option value="option1">InProgress</option>
-                        <option value="option1">Failed</option>
-                        <option value="option1">Completed</option>
-                    </select>
-                </div>
-                <!------FILTER------>
-                <div class="filter">
-                    <label class="g-label">Type:</label>
-                    <select class="g-select" name="state" id="state">
-                        <option value="select" disabled selected>Select</option>
-                        <option value="option1">Option 1</option>
-                        <option value="option1">Option 1</option>
-                        <option value="option1">Option 1</option>
-                        <option value="option1">Option 1</option>
-                    </select>
-                </div>
-                <!------FILTER------>
-                <div class="filter">
-                    <label class="g-label">Store:</label>
-                    <select class="g-select" name="state" id="state">
-                        <option value="select" disabled selected>Select</option>
-                        <option value="option1">Seller Centeral</option>
-                        <option value="option1">Vendor Centeral</option>
-                        <option value="option1">Ebay</option>
-                        <option value="option1">Wallmart</option>
-                    </select>
-                </div>
-                </div>
-                <!------SEARCH------>
-                <div class="table-search flex-item">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <input class="g-input" type="text" placeholder="Search by Name">
-                </div>
-            </div>
-
-
-       </div>
-
-
-    <!---------------------->
-    <!---------TABLE-------->
-    <!---------------------->
-
-       </div>
-
-
-       <div class="container">
-        <div class="responsive-table">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Store Name</th>
-                        <th>Job Name</th>
-                        <th>Progress</th>
-                        <th>State</th>
-                        <th>Next Run At</th>
-                        <th>Lock At</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Edgewood Type</td>
-                        <td>Created Inventory Report</td>
-                        <td>365</td>
-                        <td><span class="badge failed">Failed</span></td>
-                        <td>Tue, 28 Dec 2022 02:14 PM PST</td>
-                        <td>Tue, 28 Dec 2022 02:14 PM PST</td>
-                        <td>
-                            <button class="reload"><i class="fa-solid fa-rotate-right"></i></button>
-                    <button class="delete" onclick="display_modal()"><i class="fa-regular fa-trash-can"></i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Edgewood Type</td>
-                        <td>Created Inventory Report</td>
-                        <td>365</td>
-                        <td><span class="badge inprogress">InProgress</span></td>
-                        <td>Tue, 28 Dec 2022 02:14 PM PST</td>
-                        <td>Tue, 28 Dec 2022 02:14 PM PST</td>
-                        <td>
-                            <button class="reload"><i class="fa-solid fa-rotate-right"></i></button>
-                    <button class="delete" onclick="display_modal()"><i class="fa-regular fa-trash-can"></i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Edgewood Type</td>
-                        <td>Created Inventory Report</td>
-                        <td>365</td>
-                        <td><span class="badge complete">Complete</span></td>
-                        <td>Tue, 28 Dec 2022 02:14 PM PST</td>
-                        <td>Tue, 28 Dec 2022 02:14 PM PST</td>
-                        <td>
-                            <button class="reload"><i class="fa-solid fa-rotate-right"></i></button>
-                    <button class="delete" onclick="display_modal()"><i class="fa-regular fa-trash-can"></i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Edgewood Type</td>
-                        <td>Created Inventory Report</td>
-                        <td>365</td>
-                        <td><span class="badge started">Started</span></td>
-                        <td>Tue, 28 Dec 2022 02:14 PM PST</td>
-                        <td>Tue, 28 Dec 2022 02:14 PM PST</td>
-                        <td>
-                            <button class="reload"><i class="fa-solid fa-rotate-right"></i></button>
-                    <button class="delete" onclick="display_modal()"><i class="fa-regular fa-trash-can"></i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Edgewood Type</td>
-                        <td>Created Inventory Report</td>
-                        <td>365</td>
-                        <td><span class="badge complete">Complete</span></td>
-                        <td>Tue, 28 Dec 2022 02:14 PM PST</td>
-                        <td>Tue, 28 Dec 2022 02:14 PM PST</td>
-                        <td>
-                            <button class="reload"><i class="fa-solid fa-rotate-right"></i></button>
-                    <button class="delete" onclick="display_modal()"><i class="fa-regular fa-trash-can"></i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Edgewood Type</td>
-                        <td>Created Inventory Report</td>
-                        <td>365</td>
-                        <td><span class="badge complete">Complete</span></td>
-                        <td>Tue, 28 Dec 2022 02:14 PM PST</td>
-                        <td>Tue, 28 Dec 2022 02:14 PM PST</td>
-                        <td>
-                            <button class="reload"><i class="fa-solid fa-rotate-right"></i></button>
-                    <button class="delete" onclick="display_modal()"><i class="fa-regular fa-trash-can"></i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Edgewood Type</td>
-                        <td>Created Inventory Report</td>
-                        <td>365</td>
-                        <td><span class="badge failed">Failed</span></td>
-                        <td>Tue, 28 Dec 2022 02:14 PM PST</td>
-                        <td>Tue, 28 Dec 2022 02:14 PM PST</td>
-                        <td>
-                            <button class="reload"><i class="fa-solid fa-rotate-right"></i></button>
-                    <button class="delete" onclick="display_modal()"><i class="fa-regular fa-trash-can"></i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Edgewood Type</td>
-                        <td>Created Inventory Report</td>
-                        <td>365</td>
-                        <td><span class="badge complete">Complete</span></td>
-                        <td>Tue, 28 Dec 2022 02:14 PM PST</td>
-                        <td>Tue, 28 Dec 2022 02:14 PM PST</td>
-                        <td>
-                            <button class="reload"><i class="fa-solid fa-rotate-right"></i></button>
-                    <button class="delete" onclick="display_modal()"><i class="fa-regular fa-trash-can"></i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Edgewood Type</td>
-                        <td>Created Inventory Report</td>
-                        <td>365</td>
-                        <td><span class="badge complete">Complete</span></td>
-                        <td>Tue, 28 Dec 2022 02:14 PM PST</td>
-                        <td>Tue, 28 Dec 2022 02:14 PM PST</td>
-                        <td>
-                            <button class="reload"><i class="fa-solid fa-rotate-right"></i></button>
-                    <button class="delete" onclick="display_modal()"><i class="fa-regular fa-trash-can"></i></button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <!--------------------->
-            <!--------MODAL-------->
-            <!--------------------->
-            <div class="table-modal" id="table-modal">
-                <div class="modal-inner">
-                    <i class="fa-solid fa-triangle-exclamation"></i>
-                    <span class="h3"><b>Are you sure you want to delete this Item!</b></span>
-                    <h4>You want to able to revert it back.</h4>
-                    <button class="done-delete btn btn-1">Yes</button>
-                    <button class="cancel-delete btn btn-2" onclick="modal_close()">No</button>
-                </div>
-            </div>
-           </div>
-
-           <div class="table-footer">
-            <div class="records-count">
-                <span class="g-span">1-20 of 13688 Records</span>
-            </div>
-            <div class="pagination">
-                <a href="#"><i class="fa-solid fa-angle-left"></i></a>
-                <a href="#"><span class="g-span">1</span></a>
-                <a href="#"><span class="g-span">2</span></a>
-                <a href="#"><span class="g-span">3</span></a>
-                <a href="#"><span class="g-span">4</span></a>
-                <a href="#"><span class="g-span">5</span></a>
-                <a href="#"><span class="g-span">...</span></a>
-                <a href="#"><span class="g-span">12</span></a>
-                <a href="#"><span class="g-span">13</span></a>
-                <a href="#"><i class="fa-solid fa-angle-right"></i></a>
+          <a class="profile-img" onclick="show_user()"><img src="https://images.unsplash.com/photo-1661956600655-e772b2b97db4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80" class="profile-img" alt="user-profile"></a>
+          <!----NAVBAR MODAL---->
+          <div class="profile-modal" id="profle_modal">
+              <label class="g-span" for="logged_as">Logged as</label>
+              <h5><b>John Doe</b></h5>
+              <h5>cecil_sebastian@gmail.com</h5>
+              <hr style="margin-top: 15px;">
+              <button class="btn btn-1"><i class="fa-solid fa-arrow-right-from-bracket"></i>Logout</button>
+  </header>
+  <!---------------------->
+  <!------APP HEADER------>
+  <!---------------------->
+  <div class="container">
+      <div class="app-header">
+          <h1>Job Management</h1>
+          <!------FILTERS------>
+          <div class="table-filter">
+              <div class="filters-wrapper flex-item">
+                  <!------FILTER------>
+              <div class="filter">
+                  <label class="g-label">State:</label>
+                  <select class="g-select" name="state" id="state">
+                      <option value="select" disabled selected>Select</option>
+                      <option value="option1">Started</option>
+                      <option value="option1">InProgress</option>
+                      <option value="option1">Failed</option>
+                      <option value="option1">Completed</option>
+                  </select>
               </div>
-        </div>
-       </div>
-    </main>
+              <!------FILTER------>
+              <div class="filter">
+                  <label class="g-label">Type:</label>
+                  <select class="g-select" name="state" id="state">
+                      <option value="select" disabled selected>Select</option>
+                      <option value="option1">Option 1</option>
+                      <option value="option1">Option 1</option>
+                      <option value="option1">Option 1</option>
+                      <option value="option1">Option 1</option>
+                  </select>
+              </div>
+              <!------FILTER------>
+              <div class="filter">
+                  <label class="g-label">Store:</label>
+                  <select class="g-select" name="state" id="state">
+                      <option value="select" disabled selected>Select</option>
+                      <option value="option1">Seller Centeral</option>
+                      <option value="option1">Vendor Centeral</option>
+                      <option value="option1">Ebay</option>
+                      <option value="option1">Wallmart</option>
+                  </select>
+              </div>
+              </div>
+              <!------SEARCH------>
+              <div class="table-search flex-item">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                  <input class="g-input" type="text" placeholder="Search by Name">
+              </div>
+          </div>
 
-    <script src="script.js"></script>
-</body>
+
+     </div>
+
+
+  <!---------------------->
+  <!---------TABLE-------->
+  <!---------------------->
+
+     </div>
+
+
+     <div class="container">
+      <div class="responsive-table">
+          <table>
+              <thead>
+                  <tr>
+                      <th>Store Name</th>
+                      <th>Job Name</th>
+                      <th>Progress</th>
+                      <th>State</th>
+                      <th>Next Run At</th>
+                      <th>Lock At</th>
+                      <th></th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                      <td>Edgewood Type</td>
+                      <td>Created Inventory Report</td>
+                      <td>365</td>
+                      <td><span class="badge failed">Failed</span></td>
+                      <td>Tue, 28 Dec 2022 02:14 PM PST</td>
+                      <td>Tue, 28 Dec 2022 02:14 PM PST</td>
+                      <td>
+                          <button class="reload"><i class="fa-solid fa-rotate-right"></i></button>
+                  <button class="delete" onclick="display_modal()"><i class="fa-regular fa-trash-can"></i></button>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>Edgewood Type</td>
+                      <td>Created Inventory Report</td>
+                      <td>365</td>
+                      <td><span class="badge inprogress">InProgress</span></td>
+                      <td>Tue, 28 Dec 2022 02:14 PM PST</td>
+                      <td>Tue, 28 Dec 2022 02:14 PM PST</td>
+                      <td>
+                          <button class="reload"><i class="fa-solid fa-rotate-right"></i></button>
+                  <button class="delete" onclick="display_modal()"><i class="fa-regular fa-trash-can"></i></button>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>Edgewood Type</td>
+                      <td>Created Inventory Report</td>
+                      <td>365</td>
+                      <td><span class="badge complete">Complete</span></td>
+                      <td>Tue, 28 Dec 2022 02:14 PM PST</td>
+                      <td>Tue, 28 Dec 2022 02:14 PM PST</td>
+                      <td>
+                          <button class="reload"><i class="fa-solid fa-rotate-right"></i></button>
+                  <button class="delete" onclick="display_modal()"><i class="fa-regular fa-trash-can"></i></button>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>Edgewood Type</td>
+                      <td>Created Inventory Report</td>
+                      <td>365</td>
+                      <td><span class="badge started">Started</span></td>
+                      <td>Tue, 28 Dec 2022 02:14 PM PST</td>
+                      <td>Tue, 28 Dec 2022 02:14 PM PST</td>
+                      <td>
+                          <button class="reload"><i class="fa-solid fa-rotate-right"></i></button>
+                  <button class="delete" onclick="display_modal()"><i class="fa-regular fa-trash-can"></i></button>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>Edgewood Type</td>
+                      <td>Created Inventory Report</td>
+                      <td>365</td>
+                      <td><span class="badge complete">Complete</span></td>
+                      <td>Tue, 28 Dec 2022 02:14 PM PST</td>
+                      <td>Tue, 28 Dec 2022 02:14 PM PST</td>
+                      <td>
+                          <button class="reload"><i class="fa-solid fa-rotate-right"></i></button>
+                  <button class="delete" onclick="display_modal()"><i class="fa-regular fa-trash-can"></i></button>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>Edgewood Type</td>
+                      <td>Created Inventory Report</td>
+                      <td>365</td>
+                      <td><span class="badge complete">Complete</span></td>
+                      <td>Tue, 28 Dec 2022 02:14 PM PST</td>
+                      <td>Tue, 28 Dec 2022 02:14 PM PST</td>
+                      <td>
+                          <button class="reload"><i class="fa-solid fa-rotate-right"></i></button>
+                  <button class="delete" onclick="display_modal()"><i class="fa-regular fa-trash-can"></i></button>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>Edgewood Type</td>
+                      <td>Created Inventory Report</td>
+                      <td>365</td>
+                      <td><span class="badge failed">Failed</span></td>
+                      <td>Tue, 28 Dec 2022 02:14 PM PST</td>
+                      <td>Tue, 28 Dec 2022 02:14 PM PST</td>
+                      <td>
+                          <button class="reload"><i class="fa-solid fa-rotate-right"></i></button>
+                  <button class="delete" onclick="display_modal()"><i class="fa-regular fa-trash-can"></i></button>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>Edgewood Type</td>
+                      <td>Created Inventory Report</td>
+                      <td>365</td>
+                      <td><span class="badge complete">Complete</span></td>
+                      <td>Tue, 28 Dec 2022 02:14 PM PST</td>
+                      <td>Tue, 28 Dec 2022 02:14 PM PST</td>
+                      <td>
+                          <button class="reload"><i class="fa-solid fa-rotate-right"></i></button>
+                  <button class="delete" onclick="display_modal()"><i class="fa-regular fa-trash-can"></i></button>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>Edgewood Type</td>
+                      <td>Created Inventory Report</td>
+                      <td>365</td>
+                      <td><span class="badge complete">Complete</span></td>
+                      <td>Tue, 28 Dec 2022 02:14 PM PST</td>
+                      <td>Tue, 28 Dec 2022 02:14 PM PST</td>
+                      <td>
+                          <button class="reload"><i class="fa-solid fa-rotate-right"></i></button>
+                  <button class="delete" onclick="display_modal()"><i class="fa-regular fa-trash-can"></i></button>
+                      </td>
+                  </tr>
+              </tbody>
+          </table>
+          <!--------------------->
+          <!--------MODAL-------->
+          <!--------------------->
+          <div class="table-modal" id="table-modal">
+              <div class="modal-inner">
+                  <i class="fa-solid fa-triangle-exclamation"></i>
+                  <span class="h3"><b>Are you sure you want to delete this Item!</b></span>
+                  <h4>You want to able to revert it back.</h4>
+                  <button class="done-delete btn btn-1">Yes</button>
+                  <button class="cancel-delete btn btn-2" onclick="modal_close()">No</button>
+              </div>
+          </div>
+         </div>
+
+         <div class="table-footer">
+          <div class="records-count">
+              <span class="g-span">1-20 of 13688 Records</span>
+          </div>
+          <div class="pagination">
+              <a href="#"><i class="fa-solid fa-angle-left"></i></a>
+              <a href="#"><span class="g-span">1</span></a>
+              <a href="#"><span class="g-span">2</span></a>
+              <a href="#"><span class="g-span">3</span></a>
+              <a href="#"><span class="g-span">4</span></a>
+              <a href="#"><span class="g-span">5</span></a>
+              <a href="#"><span class="g-span">...</span></a>
+              <a href="#"><span class="g-span">12</span></a>
+              <a href="#"><span class="g-span">13</span></a>
+              <a href="#"><i class="fa-solid fa-angle-right"></i></a>
+            </div>
+      </div>
+     </div>
+  </main>
+    
+
+    <!-- Complete scripts including libraries and custom js -->
+    <script src="assets/dist/js/scripts.min.js"></script>
+
+    
+  </body>
 </html>

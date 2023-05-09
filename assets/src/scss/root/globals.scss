@@ -1,0 +1,77 @@
+
+$white : #fff;
+$blue : #3c76ff;
+$green : #0fb600;
+$light : #f8f8f8;
+$text-color : #002050;
+$darker : #979797;
+$border : #d9d9d9;
+$yellow: #f49301;
+$h2 : --font-sm;
+$h3 : 20px;
+$h4 : 15px;
+$h5 : 12px;
+@mixin input-border{
+    padding: 10px;
+    border: 1px solid $border;
+    border-radius: 5px;
+}
+/*  GLOBALS  */
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+*{
+    font-family: sans-serif;
+}
+
+h2{
+    font-size: $h2;
+}
+h3{
+    font-size: $h3;
+}
+h4{
+    font-size: $h4;
+    font-weight: 300;
+}
+h5{
+    font-weight: 400;
+}
+.g-span, .g-label{
+    font-size: $h5;
+    font-weight: 400;
+}
+.g-input{
+    @include input-border();
+    height: 18px;
+    font-size: $h4;
+}
+.g-select{
+    @include input-border();
+    -webkit-appearance: none;
+  appearance: none;
+    font-size: $h4;
+}
+.btn{
+    padding: 10px 50px;
+    text-align: center;
+    color: $blue;
+    border-color: transparent;
+    border-radius: 5px;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: $h4;
+}
+.btn-2{
+    border: 1px solid $blue !important;
+}
+.btn-1{
+    border: transparent;
+}
+.container{
+    padding: 0 16px;
+}
+
