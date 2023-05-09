@@ -331,6 +331,9 @@ will display only after max-width: 991px
         }
         /* TABLE BODY */
         tbody{
+            tr:hover{
+                background-color: $light;
+            }
             td{
                 padding: 1.2rem 0.85rem;
                 text-align: left;

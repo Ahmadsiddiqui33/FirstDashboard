@@ -308,6 +308,9 @@ will display only after max-width: 991px
   font-weight: 300;
   border-bottom: 1px solid #979797;
 }
+.responsive-table table tbody tr:hover {
+  background-color: #f8f8f8;
+}
 .responsive-table table tbody td {
   padding: 1.2rem 0.85rem;
   text-align: left;
