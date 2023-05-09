@@ -1,3 +1,4 @@
+/*  GLOBALS  */
 body {
   margin: 0;
   padding: 0;
@@ -52,13 +53,15 @@ select {
   padding: 10px 50px;
   text-align: center;
   color: #3c76ff;
+  border-color: transparent;
   border-radius: 5px;
-  background-color: white;
+  background-color: transparent;
   cursor: pointer;
+  font-size: 15px;
 }
 
 .btn-2 {
-  border: 1px solid #3c76ff;
+  border: 1px solid #3c76ff !important;
 }
 
 .btn-1 {
@@ -69,6 +72,7 @@ select {
   padding: 0 16px;
 }
 
+/* HEADER */
 header {
   position: relative;
   background-color: #f8f8f8;
@@ -77,7 +81,57 @@ header {
   align-items: center;
   padding: 0 16px;
 }
+header .responsive-nav-btn {
+  display: none;
+}
 
+/* RESPONSIVE SIDE NAVIGATION
+will display only after max-width: 991px
+*/
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #f8f8f8;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+.sidenav ul {
+  list-style-type: none;
+}
+.sidenav ul > li > a {
+  text-decoration: none;
+  color: #002050;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  padding: 10px 0;
+}
+.sidenav ul > li > a i {
+  padding-right: 15px;
+  width: 15px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+}
+.sidenav ul > li:hover a, .sidenav ul > li.active a {
+  color: #3c76ff;
+}
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  text-decoration: none;
+  color: #002050;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* MAIN NAVIGATION */
 .navbar-nav > ul {
   display: flex;
 }
@@ -145,11 +199,14 @@ header {
   padding-right: 7px;
 }
 
+/* TABLE HEADER */
 .app-header {
   display: flex;
   align-items: center;
   padding: 20px 0;
   justify-content: space-between;
+  /* TABLE FILTERS */
+  /* TABLE SEARCH */
 }
 .app-header h2 {
   color: #002050;
@@ -200,6 +257,7 @@ header {
   width: 100%;
 }
 
+/* MODAL FOR DELETE BUTTON ON TABLE */
 .table-modal {
   position: absolute;
   top: 50%;
@@ -230,10 +288,13 @@ header {
   overflow-x: auto !important;
   border-radius: 10px;
   overflow: hidden;
+  /* TABLE BADGES */
 }
 .responsive-table table {
   border-spacing: 0;
   width: 100%;
+  /* TABLE HEAD */
+  /* TABLE BODY */
 }
 .responsive-table table thead {
   background-color: #f8f8f8;
@@ -300,6 +361,7 @@ header {
   background-color: rgba(15, 182, 0, 0.0705882353);
 }
 
+/* TABLE FOOTER WITH PAGINATION */
 .table-footer {
   display: flex;
   justify-content: space-between;
@@ -316,6 +378,7 @@ header {
   color: #979797;
 }
 
+/* MEDIA QUERIES FOR RESPONSIVENESS */
 @media (max-width: 1200px) {
   .app-header {
     display: block;
@@ -324,10 +387,30 @@ header {
     width: 100%;
   }
 }
+@media (max-width: 991px) {
+  header .responsive-nav-btn {
+    display: block;
+  }
+  header .navbar-nav {
+    display: none;
+  }
+}
 @media (max-width: 768px) {
+  .filters-wrapper {
+    display: none !important;
+  }
+  .app-header .flex-item:nth-child(2) {
+    order: 1;
+  }
+  .app-header .flex-item:nth-child(1) {
+    order: 2;
+  }
   .app-header .table-filter {
     width: 100%;
-    display: block;
+    flex-wrap: wrap;
+  }
+  .app-header .table-filter .filters-wrapper {
+    order: 2;
   }
   .app-header .table-filter .filters-wrapper .filter:last-child {
     margin-right: 0;
@@ -335,6 +418,18 @@ header {
   .app-header .table-filter .table-search {
     width: 100%;
     max-width: 100%;
-    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .table-footer {
+    display: block;
+    text-align: center;
+  }
+  .table-footer .pagination {
+    padding-top: 10px;
+  }
+}
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
   }
 }/*# sourceMappingURL=style.css.map */

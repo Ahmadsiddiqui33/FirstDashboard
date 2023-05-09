@@ -13,6 +13,7 @@
     <!------HEADER------>
     <!------------------->
     <header>
+        <button class="responsive-nav-btn btn" onclick="openNav()"><i class="fa-solid fa-bars"></i></button>
         <!----LOGO---->
         <div class="navbar-logo">
             <img src="#" class="logo" alt="logo">
@@ -41,6 +42,31 @@
 
             </ul>
         </nav>
+        <!----SIDE NAV---->
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <ul>
+                <li class="active">
+                    <a href="#"><i class="fa-regular fa-user"></i>Users</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-briefcase"></i>Jobs</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-box"></i>Products</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-cart-shopping"></i>Orders</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-dollar-sign"></i>Purchasing</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-truck"></i>Suppliers</a>
+                </li>
+
+            </ul>
+        </div>
         <!----NAVBAR USER---->
         <div class="navbar-user">
             <a><i class="fa-regular fa-circle-question"></i></a>
@@ -64,7 +90,7 @@
             <h1>Job Management</h1>
             <!------FILTERS------>
             <div class="table-filter">
-                <div class="filters-wrapper">
+                <div class="filters-wrapper flex-item">
                     <!------FILTER------>
                 <div class="filter">
                     <label>State:</label>
@@ -100,20 +126,20 @@
                 </div>
                 </div>
                 <!------SEARCH------>
-                <div class="table-search">
+                <div class="table-search flex-item">
                     <i class="fa-solid fa-magnifying-glass"></i>
                     <input type="text" placeholder="Search by Name">
                 </div>
             </div>
 
-                
+
        </div>
-       
+
 
     <!---------------------->
     <!---------TABLE-------->
     <!---------------------->
-   
+
        </div>
 
 

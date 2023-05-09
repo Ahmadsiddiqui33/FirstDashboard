@@ -15,6 +15,8 @@ $h5 : 12px;
     border: 1px solid $border;
     border-radius: 5px;
 }
+/*  GLOBALS  */
+
 body{
     margin: 0;
     padding: 0;
@@ -56,12 +58,14 @@ select{
     padding: 10px 50px;
     text-align: center;
     color: $blue;
+    border-color: transparent;
     border-radius: 5px;
-    background-color: white;
+    background-color: transparent;
     cursor: pointer;
+    font-size: $h4;
 }
 .btn-2{
-    border: 1px solid $blue;
+    border: 1px solid $blue !important;
 }
 .btn-1{
     border: transparent;
@@ -72,6 +76,7 @@ select{
 
 
 
+/* HEADER */
 
 header{
     position: relative;
@@ -80,7 +85,64 @@ header{
     justify-content: space-between;
     align-items: center;
     padding: 0 16px;
+    .responsive-nav-btn{
+        display: none;
+    }
 }
+
+/* RESPONSIVE SIDE NAVIGATION
+will display only after max-width: 991px
+*/
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: $light;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    ul{
+        list-style-type: none;
+        & > li{
+            & > a{
+                text-decoration: none;
+                color: $text-color;
+                display: flex;
+                align-items: center;
+                font-size: $h4;
+                padding: 10px 0;
+                i{
+                    padding-right: 15px;
+                    width: 15px;
+                    font-size: 20px;
+                    display: flex;
+                    justify-content: center;
+                }
+            }
+            &:hover, &.active{
+                a{
+                    color: $blue;
+                }
+            }
+        }
+    }
+
+    .closebtn{
+        position: absolute;
+        top: 0;
+        text-decoration: none;
+        color: $text-color;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+    }
+  }
+
+/* MAIN NAVIGATION */
+
 .navbar-nav{
     & > ul{
         display: flex;
@@ -154,6 +216,7 @@ header{
 
 
 
+/* TABLE HEADER */
 
 .app-header{
     display: flex;
@@ -163,6 +226,9 @@ header{
     h2{
         color: $text-color;
     }
+
+    /* TABLE FILTERS */
+
     .table-filter{
         width: 60%;
         margin-left: auto;
@@ -177,7 +243,7 @@ header{
                 width: inherit;
                 position: relative;
                 align-items: center;
-    
+
                 select{
                     position: relative;
                     flex: 1;
@@ -191,8 +257,10 @@ header{
                 }
             }
         }
-        
+
     }
+    /* TABLE SEARCH */
+
     .table-search{
         border-radius: 5px;
         position: relative;
@@ -213,6 +281,7 @@ header{
 }
 
 
+/* MODAL FOR DELETE BUTTON ON TABLE */
 
 .table-modal{
     position: absolute;
@@ -247,6 +316,7 @@ header{
     table{
         border-spacing: 0;
         width: 100%;
+        /* TABLE HEAD */
         thead{
             background-color: $light;
             th{
@@ -259,6 +329,7 @@ header{
                 border-bottom: 1px solid $darker;
             }
         }
+        /* TABLE BODY */
         tbody{
             td{
                 padding: 1.2rem 0.85rem;
@@ -286,6 +357,7 @@ header{
             }
         }
     }
+    /* TABLE BADGES */
     .badge{
         font-size: $h5;
         border: 1px solid;
@@ -316,6 +388,8 @@ header{
         background-color: #0fb60012;
     }
 }
+
+/* TABLE FOOTER WITH PAGINATION */
 .table-footer{
     display: flex;
     justify-content: space-between;
@@ -334,6 +408,8 @@ header{
     }
 }
 
+/* MEDIA QUERIES FOR RESPONSIVENESS */
+
 
 @media (max-width: 1200px) {
     .app-header{
@@ -343,12 +419,35 @@ header{
         }
     }
 }
+@media (max-width: 991px){
+
+    header{
+        .responsive-nav-btn{
+            display: block;
+        }
+        .navbar-nav{
+            display: none;
+        }
+    }
+}
 @media (max-width: 768px) {
+    .filters-wrapper{
+        display: none !important;
+    }
     .app-header{
+        .flex-item{
+            &:nth-child(2){
+                order: 1;
+            }
+            &:nth-child(1){
+                order: 2;
+            }
+        }
         .table-filter{
             width: 100%;
-            display: block;
+            flex-wrap: wrap;
             .filters-wrapper{
+                order: 2;
                 .filter{
                     &:last-child{
                         margin-right: 0;
@@ -358,8 +457,25 @@ header{
             .table-search{
                 width: 100%;
                 max-width: 100%;
-                margin-top: 10px;
+                margin-bottom: 10px;
             }
         }
     }
+
+    .table-footer{
+        display: block;
+        text-align: center;
+        .pagination{
+            padding-top: 10px;
+        }
+    }
 }
+
+
+
+
+  @media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+  }
