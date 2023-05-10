@@ -1,23 +1,19 @@
-
-$white : #fff;
-$blue : #3c76ff;
-$green : #0fb600;
-$light : #f8f8f8;
-$text-color : #002050;
-$darker : #979797;
-$border : #d9d9d9;
-$yellow: #f49301;
-$h2 : --font-sm;
-$h3 : 20px;
-$h4 : 15px;
-$h5 : 12px;
-@mixin input-border{
-    padding: 10px;
-    border: 1px solid $border;
-    border-radius: 5px;
-}
+$white : --white;
+$blue : --blue-500;
+$green : --green-500;
+$light : --gray-100;
+$text-color : --blue-900;
+$darker : --gray-400;
+$border : --gray-300;
+$yellow: --yellow-400;
+$h1 : --text-4xl;
+$h2 : --text-3xl;
+$h3 : --text-xl;
+$h4 : --text-base;
+$h5 : --text-sm;
+$h6 : --text-xs;
+@import"mixins.scss";
 /*  GLOBALS  */
-
 body{
     margin: 0;
     padding: 0;
@@ -26,7 +22,9 @@ body{
 *{
     font-family: sans-serif;
 }
-
+h1{
+    font-size: $h4;
+}
 h2{
     font-size: $h2;
 }
@@ -74,4 +72,3 @@ h5{
 .container{
     padding: 0 16px;
 }
-
