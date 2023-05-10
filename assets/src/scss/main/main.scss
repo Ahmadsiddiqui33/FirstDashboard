@@ -99,7 +99,7 @@
 /* MEDIA QUERIES FOR RESPONSIVENESS */
 
 
-@media (max-width: 1200px) {
+@include lg-breakpoint {
     .app-header{
         display: block;
         .table-filter{
@@ -107,7 +107,7 @@
         }
     }
 }
-@media (max-width: 991px){
+@include md-breakpoint {
 
     header{
         .responsive-nav-btn{
@@ -118,7 +118,7 @@
         }
     }
 }
-@media (max-width: 768px) {
+@include sm-breakpoint  {
     .filters-wrapper{
         display: none !important;
     }
@@ -162,7 +162,7 @@
 
 
 
-  @media screen and (max-height: 450px) {
+  @include xs-breakpoint {
     .sidenav {
         padding-top: 15px;
     }

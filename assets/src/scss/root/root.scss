@@ -88,9 +88,15 @@
     --text-6xl: 60px;
     --text-7xl: 96px;
     --text-8xl: 128px;
+    
   }
   
-  
+  //breakpoints
+  $xsBreakpoint : 576px;
+  $smBreakpoint : 768px;
+  $mdBreakpoint : 992px;
+  $lgBreakpoint : 1200px;
+  $xlBreakpoint : 1400px;
   
   
   
