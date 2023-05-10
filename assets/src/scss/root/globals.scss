@@ -1,17 +1,17 @@
-$white : --white;
-$blue : --blue-500;
-$green : --green-500;
-$light : --gray-100;
-$text-color : --blue-900;
-$darker : --gray-400;
-$border : --gray-300;
-$yellow: --yellow-400;
-$h1 : --text-4xl;
-$h2 : --text-3xl;
-$h3 : --text-xl;
-$h4 : --text-base;
-$h5 : --text-sm;
-$h6 : --text-xs;
+$white : var(--white);
+$blue : var(--blue-500);
+$green : var(--green-500);
+$light : var(--gray-100);
+$text-color : var(--blue-900);
+$darker : var(--gray-400);
+$border : var(--gray-300);
+$yellow: var(--yellow-400);
+$h1 : var(--text-4xl);
+$h2 : var(--text-3xl);
+$h3 : var(--text-xl);
+$h4 : var(--text-base);
+$h5 : var(--text-sm);
+$h6 : var(--text-xs);
 @import"mixins.scss";
 /*  GLOBALS  */
 body{
@@ -71,4 +71,8 @@ h5{
 }
 .container{
     padding: 0 16px;
+}
+.grid-wrapper{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
 }
