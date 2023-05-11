@@ -10,26 +10,26 @@
 
 @mixin xs-breakpoint {
     @media (max-width: $xsBreakpoint){
-    @content
+      @content
     }
 };
 @mixin sm-breakpoint {
     @media (max-width: $smBreakpoint){
-    @content
+      @content
     }
 };
 @mixin md-breakpoint {
     @media (max-width: $mdBreakpoint){
-    @content
+      @content
     }
 };
 @mixin lg-breakpoint {
     @media (max-width: $lgBreakpoint){
-    @content
+      @content
     }
 };
 @mixin xl-breakpoint {
     @media (max-width: $xlBreakpoint){
-    @content
+      @content
     }
 };

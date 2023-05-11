@@ -24,60 +24,35 @@
       </div>
       <!----NAVBAR NAVIAGTIONS---->
       <nav class="navbar-nav">
-          <ul>
-              <li class="active">
-                  <a href="#"><i class="fa-regular fa-user"></i>Users</a>
+          <ul class="nav-wrapper">
+              <li class="nav-item active">
+                  <a class="nav-link" href="#"><i class="fa-regular fa-user"></i>Users</a>
               </li>
-              <li>
-                  <a href="#"><i class="fa-solid fa-briefcase"></i>Jobs</a>
+              <li class="nav-item">
+                  <a class="nav-link" href="#"><i class="fa-solid fa-briefcase"></i>Jobs</a>
               </li>
-              <li>
-                  <a href="#"><i class="fa-solid fa-box"></i>Products</a>
+              <li class="nav-item">
+                  <a class="nav-link" href="#"><i class="fa-solid fa-box"></i>Products</a>
               </li>
-              <li>
-                  <a href="#"><i class="fa-solid fa-cart-shopping"></i>Orders</a>
+              <li class="nav-item">
+                  <a class="nav-link" href="#"><i class="fa-solid fa-cart-shopping"></i>Orders</a>
               </li>
-              <li>
-                  <a href="#"><i class="fa-solid fa-dollar-sign"></i>Purchasing</a>
+              <li class="nav-item">
+                  <a class="nav-link" href="#"><i class="fa-solid fa-dollar-sign"></i>Purchasing</a>
               </li>
-              <li>
-                  <a href="#"><i class="fa-solid fa-truck"></i>Suppliers</a>
+              <li class="nav-item">
+                  <a class="nav-link" href="#"><i class="fa-solid fa-truck"></i>Suppliers</a>
               </li>
 
           </ul>
       </nav>
-      <!----SIDE NAV---->
-      <div id="mySidenav" class="sidenav">
-          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-          <ul>
-              <li class="active">
-                  <a href="#"><i class="fa-regular fa-user"></i>Users</a>
-              </li>
-              <li>
-                  <a href="#"><i class="fa-solid fa-briefcase"></i>Jobs</a>
-              </li>
-              <li>
-                  <a href="#"><i class="fa-solid fa-box"></i>Products</a>
-              </li>
-              <li>
-                  <a href="#"><i class="fa-solid fa-cart-shopping"></i>Orders</a>
-              </li>
-              <li>
-                  <a href="#"><i class="fa-solid fa-dollar-sign"></i>Purchasing</a>
-              </li>
-              <li>
-                  <a href="#"><i class="fa-solid fa-truck"></i>Suppliers</a>
-              </li>
-
-          </ul>
-      </div>
       <!----NAVBAR USER---->
       <div class="navbar-user">
           <a><i class="fa-regular fa-circle-question"></i></a>
 
           <a><i class="fa-regular fa-bell"></i></a>
 
-          <a class="profile-img" onclick="show_user()"><img src="https://images.unsplash.com/photo-1661956600655-e772b2b97db4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80" class="profile-img" alt="user-profile"></a>
+          <a onclick="show_user()"><img class="profile-img" src="https://images.unsplash.com/photo-1661956600655-e772b2b97db4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80" class="profile-img" alt="user-profile"></a>
           <!----NAVBAR MODAL---->
           <div class="profile-modal" id="profle_modal">
               <label class="g-span" for="logged_as">Logged as</label>
@@ -85,20 +60,48 @@
               <h5>cecil_sebastian@gmail.com</h5>
               <hr style="margin-top: 15px;">
               <button class="btn btn-1"><i class="fa-solid fa-arrow-right-from-bracket"></i>Logout</button>
+          </div>
+      </div>
+      
+      <!----SIDE NAV---->
+      <div class="side-nav" id="mySidenav">
+        <a href="javascript:void(0)" class="close-btn" onclick="closeNav()">&times;</a>
+        <ul class="side-nav-wrapper">
+            <li class="side-nav-item active">
+                <a class="side-nav-link" href="#"><i class="fa-regular fa-user"></i>Users</a>
+            </li>
+            <li class="side-nav-item">
+                <a class="side-nav-link" href="#"><i class="fa-solid fa-briefcase"></i>Jobs</a>
+            </li>
+            <li class="side-nav-item">
+                <a class="side-nav-link" href="#"><i class="fa-solid fa-box"></i>Products</a>
+            </li>
+            <li class="side-nav-item">
+                <a class="side-nav-link" href="#"><i class="fa-solid fa-cart-shopping"></i>Orders</a>
+            </li>
+            <li class="side-nav-item">
+                <a class="side-nav-link" href="#"><i class="fa-solid fa-dollar-sign"></i>Purchasing</a>
+            </li>
+            <li class="side-nav-item">
+                <a class="side-nav-link" href="#"><i class="fa-solid fa-truck"></i>Suppliers</a>
+            </li>
+
+        </ul>
+    </div>
   </header>
   <!---------------------->
   <!------APP HEADER------>
   <!---------------------->
   <div class="container">
       <div class="app-header">
-          <h1>Job Management</h1>
+          <h1 class="app-main-heading">Job Management</h1>
           <!------FILTERS------>
           <div class="table-filter">
               <div class="filters-wrapper flex-item">
                   <!------FILTER------>
               <div class="filter">
-                  <label class="g-label">State:</label>
-                  <select class="g-select" name="state" id="state">
+                  <label class="g-label filter-label">State:</label>
+                  <select class="g-select filter-select" name="state" id="state">
                       <option value="select" disabled selected>Select</option>
                       <option value="option1">Started</option>
                       <option value="option1">InProgress</option>
@@ -108,8 +111,8 @@
               </div>
               <!------FILTER------>
               <div class="filter">
-                  <label class="g-label">Type:</label>
-                  <select class="g-select" name="state" id="state">
+                  <label class="g-label filter-label">Type:</label>
+                  <select class="g-select filter-select" name="state" id="state">
                       <option value="select" disabled selected>Select</option>
                       <option value="option1">Option 1</option>
                       <option value="option1">Option 1</option>
@@ -119,8 +122,8 @@
               </div>
               <!------FILTER------>
               <div class="filter">
-                  <label class="g-label">Store:</label>
-                  <select class="g-select" name="state" id="state">
+                  <label class="g-label filter-label">Store:</label>
+                  <select class="g-select filter-select" name="state" id="state">
                       <option value="select" disabled selected>Select</option>
                       <option value="option1">Seller Centeral</option>
                       <option value="option1">Vendor Centeral</option>
@@ -131,8 +134,8 @@
               </div>
               <!------SEARCH------>
               <div class="table-search flex-item">
-                  <i class="fa-solid fa-magnifying-glass"></i>
-                  <input class="g-input" type="text" placeholder="Search by Name">
+                  <i class="search-icon fa-solid fa-magnifying-glass"></i>
+                  <input class="g-input search-input" type="text" placeholder="Search by Name">
               </div>
           </div>
 
@@ -267,7 +270,7 @@
                       <td>Tue, 28 Dec 2022 02:14 PM PST</td>
                       <td>
                           <button class="reload"><i class="fa-solid fa-rotate-right"></i></button>
-                  <button class="delete" onclick="display_modal()"><i class="fa-regular fa-trash-can"></i></button>
+                          <button class="delete" onclick="display_modal()"><i class="fa-regular fa-trash-can"></i></button>
                       </td>
                   </tr>
               </tbody>

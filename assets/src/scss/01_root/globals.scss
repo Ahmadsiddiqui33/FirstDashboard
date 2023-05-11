@@ -1,17 +1,4 @@
-$white : var(--white);
-$blue : var(--blue-500);
-$green : var(--green-500);
-$light : var(--gray-100);
-$text-color : var(--blue-900);
-$darker : var(--gray-400);
-$border : var(--gray-300);
-$yellow: var(--yellow-400);
-$h1 : var(--text-4xl);
-$h2 : var(--text-3xl);
-$h3 : var(--text-xl);
-$h4 : var(--text-base);
-$h5 : var(--text-sm);
-$h6 : var(--text-xs);
+
 @import"mixins.scss";
 /*  GLOBALS  */
 body{
@@ -23,7 +10,7 @@ body{
     font-family: sans-serif;
 }
 h1{
-    font-size: $h4;
+    font-size: $h1;
 }
 h2{
     font-size: $h2;
@@ -33,14 +20,17 @@ h3{
 }
 h4{
     font-size: $h4;
-    font-weight: 300;
+    font-weight: var(--font-light);
 }
 h5{
-    font-weight: 400;
+    font-weight: var(--font-normal);
+}
+.container{
+    padding: 0 var(--spacing-4);
 }
 .g-span, .g-label{
     font-size: $h5;
-    font-weight: 400;
+    font-weight: var(--font-normal);
 }
 .g-input{
     @include input-border();
@@ -53,22 +43,22 @@ h5{
   appearance: none;
     font-size: $h4;
 }
+.btn {
+    padding: 0;
+}
 .btn{
-    padding: 10px 50px;
     text-align: center;
     color: $blue;
-    border-color: transparent;
-    border-radius: 5px;
+    padding: var(--spacing-2) var(--spacing-12);
     background-color: transparent;
+    border-radius: var(--radius-sm);
+    border-color: transparent;
     cursor: pointer;
     font-size: $h4;
 }
 .btn-2{
-    border: 1px solid $blue !important;
+    border: 1px solid $blue;
 }
 .btn-1{
     border: transparent;
-}
-.container{
-    padding: 0 16px;
 }
