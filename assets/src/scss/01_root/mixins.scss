@@ -1,8 +1,8 @@
 
 @mixin input-border{
-    padding: 10px;
-    border: 1px solid $border;
-    border-radius: 5px;
+    padding: var(--spacing-2);
+    border: 1px solid $light;
+    border-radius: var(--radius-sm);
 };
 
 
